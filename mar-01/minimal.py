@@ -18,8 +18,12 @@ def display() :
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
     gl.glPushMatrix()
     gl.glRotatef(camera, 1.0, 0.0, 0.0)
-    gl.glColor3f(1.0, 1.0, 0.0)       # Essa cor tem que mudar !
-    glut.glutWireSphere(1.0, 20, 16)  # Essa forma geometrica tem que mudar (nao pode ser uma esfera) !
+    gl.glColor3f(0.3, 0.7, 0.25)         # toroide de cor verde
+    glut.glutWireTorus(0.5, 1.0, 20, 50) # criacao de um toroide:
+                                         #   0.5 raio interno
+                                         #   1.0 raio externo
+                                         #   20 lados para cada secao radial
+                                         #   50 divisoes radiais para o toroide
     gl.glPopMatrix()
     glut.glutSwapBuffers()
 
