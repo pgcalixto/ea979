@@ -35,7 +35,11 @@ def reshape(w, h) :
     glu.gluPerspective(60.0, w/h, 1.0, 20.0)
     gl.glMatrixMode(gl.GL_MODELVIEW)
     gl.glLoadIdentity()
-    glu.gluLookAt(0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
+
+    # posicao do olho no eixo X modificada de 0.0 para 1.0
+    # posicao do olho no eixo Y modificada de 0.0 para 2.0
+    # posicao do olho no eixo Z modificada de 5.0 para 3.5
+    glu.gluLookAt(1.0, 2.0, 3.5, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
 
 
 def keyboard(key, x, y) :
