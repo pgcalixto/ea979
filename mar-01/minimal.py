@@ -28,7 +28,10 @@ def reshape(w, h) :
     gl.glViewport(0, 0, w, h)
     gl.glMatrixMode(gl.GL_PROJECTION)
     gl.glLoadIdentity()
-    glu.gluPerspective(60.0, w/h, 1.0, 20.0)
+
+    # angulo de visao na direcao Y modificado de 60.0 para 55.0
+    glu.gluPerspective(55.0, w/h, 1.0, 20.0)
+
     gl.glMatrixMode(gl.GL_MODELVIEW)
     gl.glLoadIdentity()
 
