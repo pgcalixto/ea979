@@ -1,3 +1,6 @@
+from __future__ import division
+from __future__ import print_function
+
 import sys
 
 import OpenGL.GL as gl
@@ -11,6 +14,7 @@ def init() :
 
 
 def display() :
+    global camera
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
     gl.glPushMatrix()
     gl.glRotatef(camera, 1.0, 0.0, 0.0)
@@ -25,9 +29,9 @@ def display() :
 
 
 def reshape(w, h) :
-    gl.glViewport(0, 0, w, h)
+    gl.glViewport (0, 0, w, h)
     gl.glMatrixMode(gl.GL_PROJECTION)
-    gl.glLoadIdentity()
+    gl.glLoadIdentity ()
 
     # angulo de visao na direcao Y modificado de 60.0 para 55.0
     glu.gluPerspective(55.0, w/h, 1.0, 20.0)
@@ -42,11 +46,12 @@ def reshape(w, h) :
 
 
 def keyboard(key, x, y) :
-    if key == 'c':
+    global camera
+    if key == 'c' :
         camera = (camera + 10) % 360
-    elif key == 'C':
+    elif key == 'C' :
         camera = (camera - 10) % 360
-    else:
+    else :
         return
     glut.glutPostRedisplay()
 
@@ -63,9 +68,9 @@ def main() :
 
     global camera
     camera = 0
-    glut.glutDisplayFunc(display)
-    glut.glutReshapeFunc(reshape)
-    glut.glutKeyboardFunc(keyboard)
+    _ = glut.glutDisplayFunc(display)
+    _ = glut.glutReshapeFunc(reshape)
+    _ = glut.glutKeyboardFunc(keyboard)
 
     glut.glutMainLoop()
 
