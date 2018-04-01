@@ -14,7 +14,7 @@ def get_decimal_length(value):
     return digits
 
 
-if __name__ == "__main__":
+def main():
     # Image format constants
     MagicSize = 16
     MagicValue = "P3\n"
@@ -83,3 +83,6 @@ if __name__ == "__main__":
     # ...breaks the last line if needed
     if line_length != 0:
         print()
+
+if __name__ == "__main__":
+    main()
