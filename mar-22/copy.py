@@ -14,6 +14,34 @@ def get_decimal_length(value):
     return digits
 
 
+def rgb_to_hsv(rgb_vals):
+
+    rgb_vals = [x / 255.0 for x in rgb_vals]
+    max_pixel_val = max(rgb_vals)
+    min_pixel_val = min(rgb_vals)
+    delta_pixel_val = max_pixel_val - min_pixel_val
+
+    # if all the values are equal, the color is in the scale of gray
+    if delta_pixel_val == 0:
+        return [0, 0, min_pixel_val]
+
+    # max == R
+    hue = 0
+    if max_pixel_val == rgb_vals[0]:
+        hue = 60 * (((rgb_vals[1] - rgb_vals[2]) / delta_pixel_val) % 6.0)
+    # max == G
+    elif max_pixel_val == rgb_vals[1]:
+        hue = 60 * (((rgb_vals[2] - rgb_vals[0]) / delta_pixel_val) + 2)
+    # max == B
+    elif max_pixel_val == rgb_vals[2]:
+        hue = 60 * (((rgb_vals[0] - rgb_vals[1]) / delta_pixel_val) + 4)
+
+    saturation = delta_pixel_val / max_pixel_val
+    value = max_pixel_val
+
+    return [hue, saturation, value]
+
+
 def main():
     # Image format constants
     MagicSize = 16
