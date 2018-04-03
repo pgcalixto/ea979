@@ -150,6 +150,7 @@ def main():
                     line_length += length
 
                 hsv_vals = rgb_to_hsv(rgb_vals)
+                # rotate hue in 60 degrees and increase saturation by 0.25
                 hue = (hsv_vals[0] + 60) % 360
                 saturation = min(1, hsv_vals[1] + 0.25)
                 rgb_vals = hsv_to_rgb([hue, saturation, hsv_vals[2]])
