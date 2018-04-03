@@ -50,6 +50,44 @@ def rgb_to_hsv(rgb_vals):
     return [hue, saturation, value]
 
 
+"""Converts pixel from HSV image space to RGB image space.
+
+Args:
+    hsv_vals (list): List of 3 HSV values (hue, saturation and value).
+
+Returs:
+    list: List of 3 numbers of RGB values from 0 to 255.
+"""
+def hsv_to_rgb(hsv_vals):
+
+    hue = hsv_vals[0]
+    saturation = hsv_vals[1]
+    value = hsv_vals[2]
+
+    C = value * saturation
+    X = C * (1 - abs((hue / 60.0) % 6.0 - 1))
+    m = value - C
+
+    rgb_vals = [0, 0, 0]
+    if 0 <= hue < 60:
+        rgb_vals = [C, X, 0]
+    elif 60 <= hue < 120:
+        rgb_vals = [X, C, 0]
+    elif 120 <= hue < 180:
+        rgb_vals = [0, C, X]
+    elif 180 <= hue < 240:
+        rgb_vals = [0, X, C]
+    elif 240 <= hue < 300:
+        rgb_vals = [X, 0, C]
+    elif 300 <= hue < 360:
+        rgb_vals = [C, 0, X]
+
+    return [
+        int((rgb_vals[0] + m) * 255),
+        int((rgb_vals[1] + m) * 255),
+        int((rgb_vals[2] + m) * 255)]
+
+
 def main():
     # Image format constants
     MagicSize = 16
