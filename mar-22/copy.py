@@ -14,6 +14,14 @@ def get_decimal_length(value):
     return digits
 
 
+"""Converts pixel from RGB image space to HSV image space.
+
+Args:
+    rgb_vals (list): List of 3 numbers of RGB values from 0 to 255.
+
+Returs:
+    list: List of 3 HSV values (hue, saturation and value).
+"""
 def rgb_to_hsv(rgb_vals):
 
     rgb_vals = [x / 255.0 for x in rgb_vals]
