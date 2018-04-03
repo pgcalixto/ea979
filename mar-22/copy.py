@@ -132,6 +132,7 @@ def main():
     try:
         for row in range(height):
             for col in range(width):
+                rgb_vals = []
                 for channel in range(Depth):
                     if not next_values:
                         next_values = next(sys.stdin).strip().split()
@@ -145,8 +146,12 @@ def main():
                         print()
                         line_length = 0
                     # Outputs subpixel
-                    print("%d " % value, end='')
+                    rgb_vals.append(value)
                     line_length += length
+
+                hsv_vals = rgb_to_hsv(rgb_vals)
+                rgb_vals = hsv_to_rgb([hue, saturation, hsv_vals[2]])
+                print("%d %d %d " % (rgb_vals[0], rgb_vals[1], rgb_vals[2]), end='')
     except IndexError:
         print("error: unexpected end of file!", file=sys.stderr)
         sys.exit(1)
