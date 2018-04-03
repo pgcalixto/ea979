@@ -150,8 +150,12 @@ def main():
                     line_length += length
 
                 hsv_vals = rgb_to_hsv(rgb_vals)
+                hue = (hsv_vals[0] + 60) % 360
+                saturation = min(1, hsv_vals[1] + 0.25)
                 rgb_vals = hsv_to_rgb([hue, saturation, hsv_vals[2]])
+
                 print("%d %d %d " % (rgb_vals[0], rgb_vals[1], rgb_vals[2]), end='')
+
     except IndexError:
         print("error: unexpected end of file!", file=sys.stderr)
         sys.exit(1)
