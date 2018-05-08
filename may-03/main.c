@@ -46,10 +46,10 @@ void display(void) {
 
 
     // draws sun
-    glMaterialfv(GL_FRONT, GL_AMBIENT,  (GLfloat[4]){1.0, 1.0, 0.0, 1.0} );
-    glMaterialfv(GL_FRONT, GL_DIFFUSE,  (GLfloat[4]){1.0, 1.0, 0.0, 1.0} );
+    glMaterialfv(GL_FRONT, GL_AMBIENT,  (GLfloat[4]){0.0, 0.7, 0.5, 1.0} );
+    glMaterialfv(GL_FRONT, GL_DIFFUSE,  (GLfloat[4]){0.0, 0.7, 0.5, 1.0} );
     glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[4]){1.0, 1.0, 1.0, 1.0} );
-    glMaterialf (GL_FRONT, GL_SHININESS, 100.0);
+    glMaterialf (GL_FRONT, GL_SHININESS, 25.0);
     glutSolidSphere(1.0, 40, 32);
 
     // draws planet
