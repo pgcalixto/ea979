@@ -1,8 +1,8 @@
 /*
- * solarsystem.c
+ * main.c
  *
- *  Created on: 16/05/2013
- *        Author: valle
+ *  Created on: 08/05/2018
+ *        Author: pgcalixto
  */
 
 #if __APPLE__
