@@ -66,7 +66,7 @@ void display(void) {
     glPushMatrix();
     glRotatef(0.0, 1.0, 0.0, 0.0);
     {
-        // perform a lemniscale (the form of a number 8)
+        // perform a lemniscate (the form of a number 8)
         double a = 0.3;
         double angle = moon1 / 180.0 * M_PI;
         double sine = sin(angle);
