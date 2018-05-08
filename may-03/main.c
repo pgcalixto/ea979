@@ -39,7 +39,7 @@ void display(void) {
     glRotatef((GLfloat) camera, 1.0, 0.0, 0.0);
 
     // Positions the lighting(fixed i.r.t. the world)
-    glLightfv(GL_LIGHT0, GL_POSITION,(GLfloat[4]){5.0, 10.0, 5.0, 1.0});
+    glLightfv(GL_LIGHT0, GL_POSITION,(GLfloat[4]){10.0, 5.0, 10.0, 1.0});
     glLightfv(GL_LIGHT0, GL_DIFFUSE, (GLfloat[4]){1.0, 1.0, 1.0, 1.0});
     glLightfv(GL_LIGHT0, GL_SPECULAR,(GLfloat[4]){1.0, 1.0, 1.0, 1.0});
 
