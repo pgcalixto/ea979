@@ -56,7 +56,7 @@ void display(void) {
     glRotatef((GLfloat) year, 0.0, 1.0, 0.0);
     glTranslatef(2.0, 0.0, 0.0);
     glRotatef((GLfloat) day, 0.0, 1.0, 0.0);
-    glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (GLfloat[4]){0.0, 1.0, 1.0, 1.0} );
+    glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (GLfloat[4]){0.0, 1.0, 0.0, 1.0} );
     glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[4]){1.0, 1.0, 1.0, 1.0} );
     glMaterialf (GL_FRONT, GL_SHININESS, 50.0);
     glutSolidTorus(0.01, 0.2, 40, 32);
