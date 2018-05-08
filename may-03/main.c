@@ -43,7 +43,7 @@ void display(void) {
     glLightfv(GL_LIGHT0, GL_DIFFUSE, (GLfloat[4]){1.0, 1.0, 1.0, 1.0});
     glLightfv(GL_LIGHT0, GL_SPECULAR,(GLfloat[4]){1.0, 1.0, 1.0, 1.0});
 
-    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,(GLfloat[4]){0.1, 0.1, 0.1, 1.0});
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,(GLfloat[4]){0.25, 0.25, 0.25, 1.0});
 
 
     // draws sun
