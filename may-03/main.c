@@ -27,6 +27,7 @@ void init(void) {
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
     glEnable(GL_DEPTH_TEST);
 }
 
@@ -42,6 +43,10 @@ void display(void) {
     glLightfv(GL_LIGHT0, GL_POSITION,(GLfloat[4]){10.0, 5.0, 10.0, 1.0});
     glLightfv(GL_LIGHT0, GL_DIFFUSE, (GLfloat[4]){1.0, 1.0, 1.0, 1.0});
     glLightfv(GL_LIGHT0, GL_SPECULAR,(GLfloat[4]){1.0, 1.0, 1.0, 1.0});
+
+    glLightfv(GL_LIGHT1, GL_POSITION,(GLfloat[4]){-20.0, -20.0, 0.0, 1.0});
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, (GLfloat[4]){0.4, 0.6, 0.0, 1.0});
+    glLightfv(GL_LIGHT1, GL_SPECULAR,(GLfloat[4]){0.4, 0.6, 0.0, 1.0});
 
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT,(GLfloat[4]){0.25, 0.25, 0.25, 1.0});
 
