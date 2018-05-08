@@ -59,7 +59,7 @@ void display(void) {
     glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (GLfloat[4]){0.0, 1.0, 1.0, 1.0} );
     glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[4]){1.0, 1.0, 1.0, 1.0} );
     glMaterialf (GL_FRONT, GL_SHININESS, 50.0);
-    glutSolidSphere(0.2, 20, 16);
+    glutSolidTorus(0.01, 0.2, 40, 32);
 
     // draws white moon
     glPushMatrix();
