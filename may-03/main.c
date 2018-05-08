@@ -15,6 +15,7 @@
     #include <GL/glu.h>
 #endif
 
+#include <math.h>
 
 static int year = 0, day = 0, moon1 = 0, moon2 = 0, camera = 0;
 
@@ -63,8 +64,16 @@ void display(void) {
 
     // draws white moon
     glPushMatrix();
-    glRotatef((GLfloat) moon1, 1.0, 0.0, 0.0);
-    glTranslatef(0.0, 0.3, 0.0);
+    glRotatef(0.0, 1.0, 0.0, 0.0);
+    {
+        // perform a lemniscale (the form of a number 8)
+        double a = 0.3;
+        double angle = moon1 / 180.0 * M_PI;
+        double sine = sin(angle);
+        double cosine = cos(angle);
+        glTranslatef(0.0, (GLfloat) (a * cosine / (1 + sine * sine)),
+                     (GLfloat) (a * sine * cosine / (1 + sine * sine)));
+    }
     glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, (GLfloat[4]){1.0, 1.0, 1.0, 1.0} );
     glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[4]){0.0, 0.0, 1.0, 1.0} );
     glMaterialf (GL_FRONT, GL_SHININESS, 12.0);
